@@ -1,0 +1,43 @@
+{
+  "name": "uifx-shark",
+  "version": "1.0.0",
+  "main": "dist/uifx.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/progershark/uifx-shark.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "node-sass demo/assets/scss/app.scss demo/assets/css/styles.css",
+    "watch-css": "node-sass demo/assets/scss/app.scss demo/assets/css/styles.css --watch",
+    "start": "browser-sync start --config bs-config.js",
+    "build": "webpack --config webpack.config.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "animation",
+    "fade",
+    "text",
+    "javascript",
+    "library"
+  ],
+  "author": "progershark",
+  "license": "MIT",
+  "description": "Animation effects for user interface by progershark",
+  "devDependencies": {
+    "@babel/preset-env": "^7.0.0",
+    "babel-loader": "^8.0.0",
+    "browser-sync": "^3.0.3",
+    "css-loader": "^6.0.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "node-sass": "^9.0.0",
+    "style-loader": "^3.0.0",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^4.0.0",
+    "webpack-shell-plugin-next": "^2.3.2"
+  }
+}
