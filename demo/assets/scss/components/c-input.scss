@@ -1,0 +1,17 @@
+.c-input {
+  &__input {
+    min-height: 40px;
+    width: 300px;
+    border-radius: 8px;
+    border: none;
+    padding: 0 12px;
+    font-size: 0.9em;
+    font-family: Arial;
+    background: var(--primaryBg);
+    color: var(--secondary);
+
+    @media (prefers-color-scheme: dark) {
+      background: var(--primaryBg3);
+    }
+  }
+}

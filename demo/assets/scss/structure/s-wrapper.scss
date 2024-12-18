@@ -1,0 +1,11 @@
+.s-wrapper {
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  width: 100%;
+  max-width: var(--wrapper-width);
+
+  @media screen and (max-width: map_get($screen-resolution, 'tablet')) {
+    flex-wrap: wrap;
+  }
+}

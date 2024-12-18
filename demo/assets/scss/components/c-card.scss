@@ -1,0 +1,242 @@
+.c-card {
+  padding: 70px 0 30px;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+
+  &:first-of-type {
+    //padding-top: 50px;
+  }
+
+  &:last-of-type {
+    padding-bottom: 50px;
+  }
+
+  &__title {
+    padding-bottom: 10px;
+  }
+
+  &__wrap-title2 {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__title2 {
+   // margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      left: -30px;
+      content: '#';
+      color: var(--secondary2);
+      font-size: 0.8em;
+    }
+  }
+
+  &__sub-title {
+    margin-top: 50px;
+  }
+
+  &__text {
+    font-family: Arial;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 0.95em;
+  }
+
+  &__text2 {
+    font-family: Arial;
+    color: var(--secondary2);
+    font-size: 0.85em;
+  }
+
+  &__anchor {
+    color: var(--accent);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__code {
+    background: var(--codeBg);
+    color: var(--codeColor);
+    box-shadow: 0 2px 4px var(--box-shadow);
+    padding: 6px 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    display: block;
+    align-items: center;
+    width: max-content;
+    max-width: 100%;
+    font-size: 0.9em;
+
+    > span {
+      color: var(--secondary2);
+      font-size: 0.85em;
+    }
+
+    span.code-color {
+      color: var(--codeColor);
+    }
+  }
+
+  &__preview {
+
+  }
+
+  &__preview-top {
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-line);
+  }
+
+  &__preview-tabs {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    button {
+      cursor: pointer;
+      background: inherit;
+      border: none;
+      color: var(--secondary2);
+      font-size: 0.8em;
+      font-family: var(--regular);
+      text-transform: uppercase;
+      padding: 12px 0;
+      border-bottom: 2px solid var(--primaryBg);
+      transition: 0.2s;
+
+      &.active {
+        color: var(--secondary);
+        border-color: var(--accent);
+      }
+
+      &:hover {
+        color: var(--secondary);
+      }
+    }
+  }
+
+  &__preview-body {
+    width: 100%;
+    min-height: 400px;
+    background: var(--preview-bode);
+    padding: 20px;
+    color: var(--codeColor);
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__preview-title {
+    margin: 0 0 5px;
+    color: var(--gray-300);
+  }
+
+  &__wrap-preview-code {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__preview-code {
+    background: var(--codeBg);
+    border: 1px solid var(--codeBg);
+    color: var(--codeColor);
+    padding: 6px 12px;
+    border-radius: 8px;
+    display: block;
+    width: max-content;
+    font-size: 0.9em;
+    min-width: 260px;
+    box-shadow: 0 2px 4px rgba(177, 171, 171, 0.5);
+
+    @media (prefers-color-scheme: dark) {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    span {
+      background: #333;
+      color: #ffd67f;
+      padding: 3px;
+      border-radius: 4px;
+      font-size: 0.9em;
+
+      @media (prefers-color-scheme: dark) {
+        color: #fff;
+      }
+    }
+  }
+
+  &__preview-btn {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  &__restart-btn {
+    width: 30px;
+    height: 30px;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: 0;
+    transition: 0.2s;
+
+    &:hover {
+      background: var(--accentBgHover);
+    }
+  }
+
+  &__preview-anim-text {
+
+    p {
+      margin: 0;
+      color: var(--secondary);
+    }
+  }
+
+  &__preview-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    .c-card__preview-code {
+      cursor: pointer;
+      transition: 0.2s;
+      opacity: 0.7;
+
+      &.active {
+        box-shadow: none;
+        border-color: var(--codeColor);
+      }
+
+      &.active, &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__preview-title {
+    color: var(--gray-200);
+    font-size: 0.85em;
+    padding-top: 12px;
+    margin-bottom: 0;
+  }
+}

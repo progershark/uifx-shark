@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Библиотека для анимаций</title>
+  <meta name="description" content="Анимационные эффекты для пользовательского интерфейса от Progershark">
+
+  <link rel="stylesheet" href="assets/vendor/uifx/uifx.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script src="assets/vendor/uifx/uifx.js" defer></script>
+  <script src="assets/js/index.js"></script>
+</head>
+<body>
+<header class="c-header">
+  <div class="c-header__wrapper">
+    <div class="c-header__column">
+      <a href="/"
+         class="c-header__logo UifxText uifx_swim uifx-up uifx-symbol"
+         uifx-speed="100"
+         >UIFX Shark</a>
+
+      <div class="grow"></div>
+
+      <nav class="UifxFade uifx_fade" uifx-speed="1500" uifx-affect="opacity">
+        <ul>
+          <li><a href="#">Скачать</a></li>
+          <li><a href="demo.html">Демо</a></li>
+        </ul>
+      </nav>
+
+      <div class="c-header__input c-input UifxFade uifx_fade" uifx-speed="1000" uifx-delay="500" uifx-affect="opacity">
+        <input type="text" class="c-input__input" placeholder="Введите текст">
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="container">
+    <section class="s-container">
+      <div class="s-wrapper">
+        <div class="s-column">
+          <div class="c-welcome">
+            <h1 class="UifxText uifx_swim uifx-up"
+                uifx-speed="1800">
+              Оживите свои проекты  <br>с UIFX Shark
+            </h1>
+            <div class="UifxFade uifx_fade"
+                 uifx-delay="1200"
+                 uifx-speed="1800"
+                 uifx-affect="opacity"
+            >
+              <p class="UifxText uifx_print"
+                 uifx-delay="1200"
+                 uifx-speed="40"
+                 uifx-pause="1000"
+              >
+                Исследуйте безграничные возможности UIFX Shark для создания потрясающих анимаций текста, слайдеров,
+                меню и всплывающих окон, которые придадут вашим проектам уникальный стиль и динамику.
+
+                <span> Создайте незабываемые впечатления </span>
+                <span> Вдохните жизнь в ваши идеи </span>
+                <span> Поднимите уровень вашего UX </span>
+                <span> Сделайте ваш интерфейс живым </span>
+                <span> Привлеките внимание пользователей </span>
+                <span> Добавьте эмоций в ваш интерфейс </span>
+
+              </p>
+            </div>
+            <div class="c-welcome__buttons UifxFade uifx_fade"
+                 uifx-speed="1000"
+                 uifx-delay="1500"
+                 uifx-affect="opacity"
+            >
+              <a href="demo.html" class="c-btn c-btn__secondary">Перейти к UIFX Shark</a>
+              <a href="demo.html" class="c-btn c-btn__accent">
+                <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_0_260)">
+                    <path d="M38 18H30V6H18V18H10L24 32L38 18ZM10 36V40H38V36H10Z" fill="var(--white)"/>
+                  </g>#
+                  <defs>
+                    <clipPath id="clip0_0_260">
+                      <rect width="48" height="48" fill="white"/>
+                    </clipPath>
+                  </defs>
+                </svg>
+                Скачать UIFX Shark
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="c-footer">
+  <div class="c-footer__wrapper">
+    <div class="c-footer__column">
+      <p class="c-footer__text UifxFade uifx_fade"
+         uifx-speed="1300"
+         uifx-delay="2000"
+         uifx-affect="opacity"
+      >&copy; <span id="current-year"></span> UIFX Shark. Все права защищены.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

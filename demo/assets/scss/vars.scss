@@ -1,0 +1,103 @@
+// font
+//$bold: 'Inter Bold';
+//$medium: 'Inter Medium';
+//$light: 'Inter Light';
+//$thin: 'Inter Thin';
+
+// screen resolution
+$screen-resolution: (
+  'descktop': 1600px,
+  'notebook': 1440px,
+  'square': 1280px,
+  'tablet': 1024px,
+  'mobile': 767px,
+  'phone': 480px
+);
+
+:root {
+  --regular: 'Halvar Regular';
+
+
+  --wrapper-width: 100%;
+
+
+  --white: #ffffff;
+  --gray-100: #F1F1F4;
+  --gray-200: #E0E0E8;
+  --gray-300: #D4D4DC;
+  --gray-400: #A1A1B9;
+  --gray-500: #585160;
+  --gray-600: #333333;
+
+
+  --px: 40px;
+  --px_n: -100px;
+
+
+  --accent: #007bff;
+  --accentBgHover: #0056b3;
+
+  --primaryBg: #f2f2f2;
+  --primaryBg2: #f8f9fa;
+  --primaryBg3: #f0e2e2;
+
+  --secondary: #03010b;
+  --secondary2: #767676;
+  --secondaryBg: #1a1b22;
+  --secondaryBgHover: #000;
+
+  --border-line: #e6e3e3;
+
+  --dangerBg: #f8d7da;
+  --danger: #721c24;
+  --dangerBgHover: #f5c6cb;
+
+  --codeBg: #fff;
+  --codeColor: #524da0;
+
+  --preview-bode: #fffdfd;
+
+  --box-shadow: rgb(187 187 187 / 30%);
+
+  @media (prefers-color-scheme: dark) {
+    --accent: #007bff;
+    --accentBgHover: #003d80;
+
+    --primaryBg: #0f0f0f;
+    --primaryBg2: #1a1a1a;
+    --primaryBg3: #2e2828;
+
+    --secondary: #fff;
+    --secondary2: #7d7d90;
+    --secondaryBg: #F1F1F4;
+    --secondaryBgHover: #d4d4d5;
+
+    --border-line: #1a1a1a;
+
+    --dangerBg: #5d0101;
+    --danger: #880505;
+    --dangerBgHover: #720505;
+
+    --codeBg: #1e1f22;
+    --codeColor: #d5b778;
+
+    --preview-bode: #333;
+
+    --box-shadow: rgba(0, 0, 0, 0.5);
+  }
+
+  @media screen and (max-width: map_get($screen-resolution, 'square')) {
+    --px: 50px;
+    --px_n: -50px;
+  }
+
+  @media screen and (max-width: map_get($screen-resolution, 'tablet')) {
+    --px: 16px;
+    --px_n: -16px;
+  }
+
+  @media screen and (max-width: map_get($screen-resolution, 'mobile')) {
+    --px: 8px;
+    --px_n: -8px;
+  }
+}

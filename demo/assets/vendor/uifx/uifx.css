@@ -1,0 +1,162 @@
+/* uifx text */
+.uifx_swim {
+    opacity: 0;
+}
+
+.uifx_swim > .word-wrapper {
+    display: inline-block;
+}
+
+.uifx_print:after {
+    content: '_';
+}
+
+.uifx_swim span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.uifx_swim > div > div {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.uifx_swim.uifx-up > div > div > span {
+    opacity: 0;
+    display: block;
+    transform: translateY(200%);
+}
+
+.uifx_swim.uifx-down > div > div > span {
+    opacity: 0;
+    display: block;
+    transform: translateY(-200%);
+}
+
+.uifx_swim.active {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: opacity 0.5s ease-in-out;
+}
+
+.uifx_swim.active > div > div > span {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+
+
+.uifx_swim.uifx-symbol div > div > span {
+    opacity: 1;
+    transform: translate(0);
+    display: flex;
+}
+
+.uifx_swim.uifx-symbol div > div > span > span {
+    display: block;
+}
+
+.uifx_swim.uifx-symbol div> div > span > span > span {
+    display: block;
+    transform: translateY(200%);
+    opacity: 0;
+}
+
+.uifx_increment {
+    opacity: 0;
+}
+
+.uifx_increment.active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* uifx fade */
+.uifx_fade[uifx-affect="opacity"] {
+    opacity: 0;
+}
+
+.uifx_route.uifx-up {
+    transform: translateY(200%);
+}
+
+.uifx_route.uifx-down {
+    transform: translateY(-200%);
+}
+
+.uifx_route.uifx-right {
+    transform: translateX(200%);
+}
+
+.uifx_route.uifx-left {
+    transform: translateX(-200%);
+}
+
+.uifx_route[uifx-affect="opacity"] {
+    opacity: 0;
+}
+
+/*Это через js наверное свойство
+.uifx_route[uifx-affect="blur-*"] {
+    filter: blur(*px);
+}*/
+
+/*----*/
+
+.uifx_route[uifx-cut="true"] {
+    overflow: hidden;
+}
+
+.uifx_fade[uifx-cut="true"] > div[uifx-affect="opacity"] {
+    opacity: 0;
+}
+
+.uifx_route[uifx-cut="true"] > div[uifx-affect="opacity"] {
+    opacity: 0;
+}
+
+.uifx_route[uifx-cut="true"] > div.uifx-up {
+    transform: translateY(200%);
+}
+
+.uifx_route[uifx-cut="true"] > div.uifx-down {
+    transform: translateY(-200%);
+}
+
+.uifx_route[uifx-cut="true"] > div.uifx-right {
+    transform: translateX(200%);
+}
+
+.uifx_route[uifx-cut="true"] > div.uifx-left {
+    transform: translateX(-200%);
+}
+
+/*Это через js наверное свойство
+.uifx_route[uifx-cut="true"] > div[uifx-affect="blur-*"] {
+    filter: blur(*px);
+}*/
+
+.uifx_fade.active, .uifx_route.active,
+.uifx_fade.active > div, .uifx_route.active > div {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: blur(0px);
+}
+
+.uifx_route[uifx-cut="true"] {
+    overflow: hidden;
+    opacity: 1;
+    transform: translate(0, 0);
+    max-width: max-content;
+}
+
+.uifx_route[uifx-cut="true"] > div {
+    max-width: max-content;
+    opacity: 0;
+}
+
+.uifx_route.active[uifx-cut="true"] > div {
+    opacity: 1;
+}
+

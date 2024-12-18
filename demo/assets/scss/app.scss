@@ -1,0 +1,25 @@
+/*
+Template Name: uifx-shark
+Version: 0.0.1
+Contact: progershark@gmail.com
+File: Main Css File
+*/
+
+// vars
+@import 'font';
+@import 'vars';
+
+// structure
+@import 'structure/s-container';
+@import 'structure/s-wrapper';
+@import 'structure/s-column';
+@import 'structure/general';
+
+// components
+@import 'components/c-header';
+@import 'components/c-footer';
+@import 'components/c-sidebar';
+@import 'components/c-btn';
+@import 'components/c-input';
+@import 'components/c-welcome';
+@import 'components/c-card';

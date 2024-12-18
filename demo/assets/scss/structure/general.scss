@@ -1,0 +1,66 @@
+$font-size: 1rem;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  letter-spacing: 0;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--regular);
+  background-color: var(--primaryBg);
+  color: var(--secondary);
+  font-size: 16px;
+  line-height: 16px;
+}
+
+main {
+  display: flex;
+}
+
+#container {
+  width: 100%;
+}
+
+.grow {
+  flex-grow: 1;
+  display: block !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1em;
+  margin: 0;
+}
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size: 3em;
+}
+
+h3 {
+  font-size: 2em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.4em;
+}
+
+.codeColor {
+  color: var(--codeColor);
+}
+
+.img-cat {
+  width: 250px;
+}

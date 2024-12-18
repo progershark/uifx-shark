@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Demo uifx-shark</title>
+  <meta name="description" content="Анимационные эффекты для пользовательского интерфейса от Progershark">
+
+  <link rel="stylesheet" href="assets/vendor/uifx/uifx.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script src="assets/vendor/uifx/uifx.js" defer></script>
+  <script src="assets/js/index.js"></script>
+</head>
+<body>
+<header class="c-header">
+  <div class="c-header__wrapper">
+    <div class="c-header__column">
+      <a href="/"
+         class="c-header__logo UifxText uifx_swim uifx-up uifx-symbol"
+         uifx-speed="100"
+      >UIFX Shark</a>
+
+      <div class="grow"></div>
+
+      <nav class="UifxFade uifx_fade" uifx-speed="1500" uifx-affect="opacity">
+        <ul>
+          <li><a href="#">Демо</a></li>
+          <li><a href="#">Скачать</a></li>
+        </ul>
+      </nav>
+
+      <div class="c-header__input c-input UifxFade uifx_fade" uifx-speed="1000" uifx-delay="500" uifx-affect="opacity">
+        <input type="text" class="c-input__input" placeholder="Поиск класса">
+      </div>
+    </div>
+  </div>
+</header>
+<main class="tabBlock">
+  <aside class="c-sidebar"
+         role="navigation"
+         aria-label="Sidebar Navigation">
+    <div class="c-sidebar__wrap UifxFade uifx_route uifx-left"
+         uifx-speed="800"
+         uifx-affect="opacity"
+         uifx-translate="90%"
+    >
+      <div class="c-sidebar__title">Документация</div>
+      <nav class="c-sidebar__nav">
+        <ul>
+          <li><span class="c-sidebar__subtitle">Подстрока</span></li>
+
+          <li id="tab-uifx_text"
+              aria-controls="panel-uifx_text"
+              aria-selected="false"
+              class="tabButton active">
+            <span class="c-sidebar__subtitle2">UifxText</span>
+            <ul>
+              <li><a href="#UifxText_print"
+                     class="c-sidebar__btn"
+                     title="Часть текста печатается, стирается и изменяется на новый"
+              >Печатное появление</a></li>
+              <li><a href="#UifxText_swim"
+                     class="c-sidebar__btn"
+                     title="Цифры набираются от нуля до нужной цифры"
+              >Позиционированное появление</a></li>
+              <li><a href="#UifxText_swim-step"
+                     class="c-sidebar__btn"
+                     title=""
+              >Поэтапное появление</a></li>
+              <li><a href="#UifxText_increment"
+                     class="c-sidebar__btn"
+                     title="Цифры набираются от нуля до нужной цифры"
+              >Возрастание числа</a></li>
+            </ul>
+          </li>
+
+          <li><span class="c-sidebar__subtitle">Элемент</span></li>
+          <li id="tab-uifx_fade"
+              aria-controls="panel-uifx_fade"
+              aria-selected="true"
+              class="tabButton"
+          >
+            <span class="c-sidebar__subtitle2">UifxFade</span>
+            <ul>
+              <li><a href="#uifx_fade_text-default"
+                     class="c-sidebar__btn"
+                     title="Стандартное проявление основного текста через прозрачность"
+              >Стандартное проявление</a></li>
+              <li><a href="#uifx_fade_text-route"
+                     class="c-sidebar__btn"
+                     title="Плавное построчное появление текста, например: снизу вверх"
+              >Позиционированное появление</a></li>
+            </ul>
+          </li>
+
+          <li><span class="c-sidebar__subtitle">При событие Scroll</span></li>
+          <li>
+            <span class="c-sidebar__subtitle2">Название класса</span>
+            <ul>
+              <li><a href=""
+                      class="c-sidebar__btn"
+                      title="При скролле - текст заполняется цветом"
+              >Заполнение цветом</a></li>
+              <li><a href=""
+                      class="c-sidebar__btn"
+                      title="При скролле - размытый текст становится четким"
+              >Появление через размытие</a></li>
+              <li><a href=""
+                      class="c-sidebar__btn"
+                      title="При скролле - текс вылетает справа налево, при этом меняется его прозрачность"
+              >Горизонтальное появление</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <div id="container"
+       class="UifxFade uifx_fade"
+       uifx-delay="500"
+       uifx-speed="600"
+       uifx-affect="opacity"
+  >
+    <section class="s-container" id="panel-uifx_text" aria-labelledby="tab-uifx_uifx_text" role="tabpanel" tabindex="0">
+      <div class="s-wrapper">
+        <div class="s-column">
+          <div class="c-card" id="UifxText_print">
+            <a href="#UifxText_print" class="c-card__wrap-title2">
+              <h3 class="c-card__title2">Печатное появление текста </h3>
+            </a>
+            <h4 class="c-card__sub-title">Теория</h4>
+            <p class="c-card__text">
+              Печатное появление текста — это анимация, которая отображает текст печатая, стирается и изменяется
+              на новый. Анимация начинается, когда элемент появляется в области просмотра пользователя. Вы можете
+              настроить анимацию с помощью следующих атрибутов:
+            </p>
+            <code class="c-card__code">
+              class="UifxText uifx_print"
+              <span>// класс</span>
+            </code>
+            <code class="c-card__code">
+              uifx-threshold="*"
+              <span>// начнется когда * % элемента станет видимым ( по-умолчанию 0.1 - 10% )</span>
+            </code>
+            <code class="c-card__code">
+              uifx-delay="*"
+              <span>// будет воспроизведена через * миллисекунд, после uifx-threshold</span>
+            </code>
+            <code class="c-card__code">
+              uifx-speed="*"
+              <span>// скорость воспроизведения, * миллисекунд</span>
+            </code>
+            <code class="c-card__code">
+              uifx-pause="*"
+              <span>// задержка напечатанного, * миллисекунд</span>
+            </code>
+            <code class="c-card__code">
+              <span>// каждую меняющуюся подстроку нужно обернуть в</span>
+              span
+            </code>
+
+            <h4 class="c-card__sub-title">Практика</h4>
+
+            <div class="c-card__preview">
+              <div class="c-card__preview-top">
+                <ul class="c-card__preview-tabs">
+                  <li><button
+                          id="tab-UifxText_print_1"
+                          aria-controls="panel-UifxText_print_1"
+                          aria-selected="true"
+                          class="tabButton active"
+                  >Атрибуты</button></li>
+                  <li><button
+                          id="tab-UifxText_print_2"
+                          aria-controls="panel-UifxText_print_2"
+                          aria-selected="false"
+                          class="tabButton"
+                  >Демо</button></li>
+                </ul>
+                <div class="grow"></div>
+                <button class="c-card__preview-copy c-btn c-btn__copy btnCopyCode" title="copy"></button>
+              </div>
+              <div class="c-card__preview-body active"
+                   id="panel-UifxText_print_1"
+                   aria-labelledby="tab-UifxText_print_1"
+                   role="tabpanel"
+                   tabindex="0"
+              >
+                <div class="c-card__wrap-preview-code copyCode">
+                  <code class="c-card__preview-code">
+                    class="UifxText uifx_print"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-delay="<span contenteditable="true">500</span>"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-speed="<span contenteditable="true">20</span>"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-pause="<span contenteditable="true">2000</span>"
+                  </code>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__preview-btn c-btn c-btn__link">Сбросить значения</button>
+              </div>
+              <div class="c-card__preview-body hiddenTagContent"
+                   id="panel-UifxText_print_2"
+                   aria-labelledby="tab-UifxText_print_2"
+                   role="tabpanel"
+                   tabindex="0"
+              >
+                <div class="c-card__preview-anim-text">
+                  <p class="UifxText uifx_print"
+                     uifx-delay="500"
+                     uifx-speed="20"
+                     uifx-pause="2000"
+                  >
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                    <span>
+                      Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+                    </span>
+                    <span>
+                      Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="c-card" id="UifxText_swim">
+            <a href="#UifxText_swim" class="c-card__wrap-title2">
+              <h3 class="c-card__title2">Позиционированное появление текста через прозрачность</h3>
+            </a>
+            <h4 class="c-card__sub-title">Теория</h4>
+            <p class="c-card__text">
+              Позиционированное появление текста — это анимация, которая плавно отображает текст на странице, изменяя
+              его прозрачность и позицию. Анимация начинается, когда элемент становится видимым в области просмотра пользователя.
+              Вы можете настроить анимацию с помощью следующих атрибутов:
+            </p>
+            <code class="c-card__code">
+              class="UifxText uifx_swim"
+              <span>// класс</span>
+            </code>
+            <code class="c-card__code">
+              :class="uifx-up || uifx-down"
+              <span>// псевдокласс, задает направление СНИЗУ ВВЕРХ или СВЕРХУ СНИЗ</span>
+            </code>
+            <code class="c-card__code">
+              uifx-threshold="*"
+              <span>// начнется когда * % элемента станет видимым ( по-умолчанию 0.1 - 10% )</span>
+            </code>
+            <code class="c-card__code">
+              uifx-delay="*"
+              <span>// будет воспроизведена через * миллисекунд, после uifx-threshold</span>
+            </code>
+            <code class="c-card__code">
+              uifx-speed="*"
+              <span>// скорость воспроизведения, * миллисекунд</span>
+            </code>
+
+            <p class="c-card__text2">Дополнительные фичи:</p>
+            <code class="c-card__code">
+              uifx-repeat="true"
+              <span>// каждый раз  будет воспроизведена, при попадании в область видимости экрана</span>
+            </code>
+            <code class="c-card__code">
+              uifx-click="*"
+              <span>// начнется, когда произойдет клик по элементу с атрибутом
+                <span class="code-color">uifx-trigger-open="*"</span>, закончится когда произойдет клик по элементу с
+                атрибутом <span class="code-color">uifx-trigger-close="*"</span>. <br>Атрибуты:
+                <span class="code-color">uifx-threshold="*"</span>, <span class="code-color">uifx-delay="*"</span> и
+                <span class="code-color">uifx-repeat="true"</span> игнорируются
+              </span>
+            </code>
+
+            <h4 class="c-card__sub-title">Практика</h4>
+
+            <div class="c-card__preview">
+              <div class="c-card__preview-top">
+                <ul class="c-card__preview-tabs">
+                  <li><button
+                          id="tab-UifxText_swim_1"
+                          aria-controls="panel-UifxText_swim_1"
+                          aria-selected="true"
+                          class="tabButton active"
+                  >Атрибуты</button></li>
+                  <li><button
+                          id="tab-UifxText_swim_2"
+                          aria-controls="panel-UifxText_swim_2"
+                          aria-selected="false"
+                          class="tabButton"
+                          uifx-trigger-open="demo-uifx_swim"
+                  >Демо</button></li>
+                </ul>
+                <div class="grow"></div>
+                <button class="c-card__preview-copy c-btn c-btn__copy btnCopyCode" title="copy"></button>
+              </div>
+              <div class="c-card__preview-body active"
+                   id="panel-UifxText_swim_1"
+                   aria-labelledby="tab-UifxText_swim_1"
+                   role="tabpanel"
+                   tabindex="0">
+                <div class="c-card__wrap-preview-code copyCode">
+                  <code class="c-card__preview-code">
+                    class="UifxText uifx_swim"
+                  </code>
+                  <div class="c-card__preview-group">
+                    <code class="c-card__preview-code active">
+                      :class="uifx-up"
+                    </code>
+                    <code class="c-card__preview-code">
+                      :class="uifx-down"
+                    </code>
+                  </div>
+                  <code class="c-card__preview-code">
+                    uifx-delay="<span contenteditable="true">0</span>"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-speed="<span contenteditable="true">800</span>"
+                  </code>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__preview-btn c-btn c-btn__link">Сбросить значения</button>
+              </div>
+              <div class="c-card__preview-body hiddenTagContent"
+                   id="panel-UifxText_swim_2"
+                   aria-labelledby="tab-UifxText_swim_2"
+                   role="tabpanel"
+                   tabindex="0">
+                <div class="c-card__preview-anim-text">
+                  <p class="UifxText uifx_swim uifx-up"
+                     uifx-delay="0"
+                     uifx-speed="800"
+                     uifx-click="demo-uifx_swim"
+                  >
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  </p>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__restart-btn btnRestartAnim" title="Перезапуск" uifx-trigger="demo-uifx_swim">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px">
+                    <path fill="var(--white)" d="M24,36.1c-6.6,0-12-5.4-12-12c0-3.6,1.6-7,4.4-9.3l2.5,3.1c-1.8,1.5-2.9,3.8-2.9,6.2c0,4.4,3.6,8,8,8 s8-3.6,8-8c0-2.1-0.8-4-2.2-5.5l2.9-2.7C34.8,18,36,21,36,24.1C36,30.7,30.6,36.1,24,36.1z"/>
+                    <path fill="var(--white)" d="M12 13L21 13 21 22z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="c-card" id="UifxText_swim-step">
+            <a href="#UifxText_swim-step" class="c-card__wrap-title2">
+              <h3 class="c-card__title2">Поэтапное появление текста через прозрачность и позиционирование</h3>
+            </a>
+            <h4 class="c-card__sub-title">Теория</h4>
+            <p class="c-card__text">
+              Поэтапное появление текста — это анимация, которая плавно отображает текст на странице, изменяя его
+              прозрачность и позицию каждой подстроки поочередно. Анимация начинается, когда элемент становится видимым
+              в области просмотра пользователя. Вы можете настроить анимацию с помощью следующих атрибутов:
+            </p>
+            <code class="c-card__code">
+              class="UifxText uifx_swim"
+              <span>// класс</span>
+            </code>
+            <code class="c-card__code">
+              :class="uifx-up || uifx-down"
+              <span>// псевдокласс, задает направление СНИЗУ ВВЕРХ или СВЕРХУ СНИЗ</span>
+            </code>
+            <code class="c-card__code">
+              :class="uifx-word || uifx-symbol"
+              <span>// псевдокласс, задает появление ПО СЛОВАМ или ПО БУКВАМ</span>
+            </code>
+            <code class="c-card__code">
+              uifx-threshold="*"
+              <span>// начнется когда * % элемента станет видимым ( по-умолчанию 0.1 - 10% )</span>
+            </code>
+            <code class="c-card__code">
+              uifx-delay="*"
+              <span>// будет воспроизведена через * миллисекунд, после uifx-threshold</span>
+            </code>
+            <code class="c-card__code">
+              uifx-speed="*"
+              <span>// скорость воспроизведения, * миллисекунд</span>
+            </code>
+
+            <p class="c-card__text2">Дополнительные фичи:</p>
+            <code class="c-card__code">
+              uifx-repeat="true"
+              <span>// каждый раз  будет воспроизведена, при попадании в область видимости экрана</span>
+            </code>
+            <code class="c-card__code">
+              uifx-click="*"
+              <span>// начнется, когда произойдет клик по элементу с атрибутом
+                <span class="code-color">uifx-trigger-open="*"</span>, закончится когда произойдет клик по элементу с
+                атрибутом <span class="code-color">uifx-trigger-close="*"</span>. <br>Атрибуты:
+                <span class="code-color">uifx-threshold="*"</span>, <span class="code-color">uifx-delay="*"</span> и
+                <span class="code-color">uifx-repeat="true"</span> игнорируются
+              </span>
+            </code>
+
+            <h4 class="c-card__sub-title">Практика</h4>
+
+            <div class="c-card__preview">
+              <div class="c-card__preview-top">
+                <ul class="c-card__preview-tabs">
+                  <li><button
+                          id="tab-UifxText_swim-step_1"
+                          aria-controls="panel-UifxText_swim-step_1"
+                          aria-selected="true"
+                          class="tabButton active"
+                  >Атрибуты</button></li>
+                  <li><button
+                          id="tab-UifxText_swim-step_2"
+                          aria-controls="panel-UifxText_swim-step_2"
+                          aria-selected="false"
+                          class="tabButton"
+                          uifx-trigger-open="demo-uifx_swim-step"
+                  >Демо</button></li>
+                </ul>
+                <div class="grow"></div>
+                <button class="c-card__preview-copy c-btn c-btn__copy btnCopyCode" title="copy"></button>
+              </div>
+              <div class="c-card__preview-body active"
+                   id="panel-UifxText_swim-step_1"
+                   aria-labelledby="tab-UifxText_swim-step_1"
+                   role="tabpanel"
+                   tabindex="0"
+              >
+                <div class="c-card__wrap-preview-code copyCode">
+                  <code class="c-card__preview-code">
+                    class="UifxText uifx_swim"
+                  </code>
+                  <div class="c-card__preview-group">
+                    <code class="c-card__preview-code active">
+                      :class="uifx-up"
+                    </code>
+                    <code class="c-card__preview-code">
+                      :class="uifx-down"
+                    </code>
+                  </div>
+                  <div class="c-card__preview-group">
+                    <code class="c-card__preview-code active">
+                      :class="uifx-word"
+                    </code>
+                    <code class="c-card__preview-code">
+                      :class="uifx-symbol"
+                    </code>
+                  </div>
+                  <code class="c-card__preview-code">
+                    uifx-delay="<span contenteditable="true">0</span>"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-speed="<span contenteditable="true">20</span>"
+                  </code>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__preview-btn c-btn c-btn__link">Сбросить значения</button>
+              </div>
+              <div class="c-card__preview-body hiddenTagContent"
+                   id="panel-UifxText_swim-step_2"
+                   aria-labelledby="tab-UifxText_swim-step_2"
+                   role="tabpanel"
+                   tabindex="0"
+              >
+                <div class="c-card__preview-anim-text">
+                  <p class="UifxText uifx_swim uifx-up uifx-word"
+                     uifx-delay="0"
+                     uifx-speed="20"
+                     uifx-click="demo-uifx_swim-step"
+                  >
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  </p>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__restart-btn btnRestartAnim" title="Перезапуск" uifx-trigger="demo-uifx_swim-step">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px">
+                    <path fill="var(--white)" d="M24,36.1c-6.6,0-12-5.4-12-12c0-3.6,1.6-7,4.4-9.3l2.5,3.1c-1.8,1.5-2.9,3.8-2.9,6.2c0,4.4,3.6,8,8,8 s8-3.6,8-8c0-2.1-0.8-4-2.2-5.5l2.9-2.7C34.8,18,36,21,36,24.1C36,30.7,30.6,36.1,24,36.1z"/>
+                    <path fill="var(--white)" d="M12 13L21 13 21 22z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="c-card" id="UifxText_increment">
+            <a href="#UifxText_increment" class="c-card__wrap-title2">
+              <h3 class="c-card__title2">Возрастание числа</h3>
+            </a>
+            <h4 class="c-card__sub-title">Теория</h4>
+            <p class="c-card__text">
+              Возрастание числа — это анимация, которая плавно набирает значение числа от нуля до нужной. Анимация начинается,
+              когда элемент появляется в области просмотра пользователя. Вы можете настроить анимацию с помощью следующих
+              атрибутов:
+            </p>
+            <code class="c-card__code">
+              class="UifxText uifx_increment"
+              <span>// класс</span>
+            </code>
+            <code class="c-card__code">
+              uifx-threshold="*"
+              <span>// начнется когда * % элемента станет видимым ( по-умолчанию 0.1 - 10% )</span>
+            </code>
+            <code class="c-card__code">
+              uifx-delay="*"
+              <span>// будет воспроизведена через * миллисекунд, после uifx-threshold</span>
+            </code>
+            <code class="c-card__code">
+              uifx-speed="*"
+              <span>// скорость воспроизведения, * миллисекунд</span>
+            </code>
+
+            <p class="c-card__text2">Дополнительные фичи:</p>
+            <code class="c-card__code">
+              uifx-repeat="true"
+              <span>// каждый раз  будет воспроизведена, при попадании в область видимости экрана</span>
+            </code>
+            <code class="c-card__code">
+              uifx-click="*"
+              <span>// начнется, когда произойдет клик по элементу с атрибутом
+                <span class="code-color">uifx-trigger-open="*"</span>, закончится когда произойдет клик по элементу с
+                атрибутом <span class="code-color">uifx-trigger-close="*"</span>. <br>Атрибуты:
+                <span class="code-color">uifx-threshold="*"</span>, <span class="code-color">uifx-delay="*"</span> и
+                <span class="code-color">uifx-repeat="true"</span> игнорируются
+              </span>
+            </code>
+
+            <h4 class="c-card__sub-title">Практика</h4>
+
+            <div class="c-card__preview">
+              <div class="c-card__preview-top">
+                <ul class="c-card__preview-tabs">
+                  <li><button
+                          id="tab-UifxText_increment_1"
+                          aria-controls="panel-UifxText_increment_1"
+                          aria-selected="true"
+                          class="tabButton active"
+                  >Атрибуты</button></li>
+                  <li><button
+                          id="tab-UifxText_increment_2"
+                          aria-controls="panel-UifxText_increment_2"
+                          aria-selected="false"
+                          class="tabButton"
+                          uifx-trigger-open="demo-uifx_increment"
+                  >Демо</button></li>
+                </ul>
+                <div class="grow"></div>
+                <button class="c-card__preview-copy c-btn c-btn__copy btnCopyCode" title="copy"></button>
+              </div>
+              <div class="c-card__preview-body active" id="panel-UifxText_increment_1" aria-labelledby="tab-UifxText_increment_1" role="tabpanel" tabindex="0">
+                <div class="c-card__wrap-preview-code copyCode">
+                  <code class="c-card__preview-code">
+                    class="UifxText uifx_increment"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-delay="<span contenteditable="true">500</span>"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-speed="<span contenteditable="true">5</span>"
+                  </code>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__preview-btn c-btn c-btn__link">Сбросить значения</button>
+              </div>
+              <div class="c-card__preview-body hiddenTagContent" id="panel-UifxText_increment_2" aria-labelledby="tab-UifxText_increment_2" role="tabpanel" tabindex="0">
+                <div class="c-card__preview-anim-text">
+                  <p class="UifxText uifx_increment"
+                     uifx-threshold="0.1"
+                     uifx-delay="500"
+                     uifx-speed="5"
+                     uifx-click="demo-uifx_increment"
+                  >1000</p>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__restart-btn btnRestartAnim" title="Перезапуск" uifx-trigger="demo-uifx_increment">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px">
+                    <path fill="var(--white)" d="M24,36.1c-6.6,0-12-5.4-12-12c0-3.6,1.6-7,4.4-9.3l2.5,3.1c-1.8,1.5-2.9,3.8-2.9,6.2c0,4.4,3.6,8,8,8 s8-3.6,8-8c0-2.1-0.8-4-2.2-5.5l2.9-2.7C34.8,18,36,21,36,24.1C36,30.7,30.6,36.1,24,36.1z"/>
+                    <path fill="var(--white)" d="M12 13L21 13 21 22z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="s-container" id="panel-uifx_fade" aria-labelledby="tab-uifx_fade" role="tabpanel" tabindex="0">
+      <div class="s-wrapper">
+        <div class="s-column">
+          <div class="c-card" id="uifx_fade_text-default">
+            <a href="#uifx_fade_text-default" class="c-card__wrap-title2">
+              <h3 class="c-card__title2">Стандартное проявление</h3>
+            </a>
+            <h4 class="c-card__sub-title">Теория</h4>
+            <p class="c-card__text">
+              Стандартное появление — это анимация, которая плавно отображает элемент на странице через изменение его
+              прозрачности или блюра. Анимация начинается, когда элемент становится видимым в области просмотра
+              пользователя. Вы можете настроить анимацию с помощью атрибутов:
+            </p>
+            <code class="c-card__code">
+              class="UifxFade uifx_fade"
+              <span>// класс</span>
+            </code>
+            <code class="c-card__code">
+              uifx-threshold="*"
+              <span>// начнется когда * % элемента станет видимым ( по-умолчанию 0.1 - 10% )</span>
+            </code>
+            <code class="c-card__code">
+              uifx-delay="*"
+              <span>// будет воспроизведена через * миллисекунд, после uifx-threshold</span>
+            </code>
+            <code class="c-card__code">
+              uifx-speed="*"
+              <span>// скорость воспроизведения, * миллисекунд</span>
+            </code>
+            <code class="c-card__code">
+              uifx-affect="opacity || blur-*"
+              <span>// значение, появление через ПРОЗРАЧНОСТЬ или БЛЮР ( * px )</span>
+            </code>
+            <p class="c-card__text2">Дополнительные фичи:</p>
+            <code class="c-card__code">
+              uifx-repeat="true"
+              <span>// каждый раз  будет воспроизведена, при попадании в область видимости экрана</span>
+            </code>
+            <code class="c-card__code">
+              uifx-click="*"
+              <span>// начнется, когда произойдет клик по элементу с атрибутом
+                <span class="code-color">uifx-trigger-open="*"</span>, закончится когда произойдет клик по элементу с
+                атрибутом <span class="code-color">uifx-trigger-close="*"</span>. <br>Атрибуты:
+                <span class="code-color">uifx-threshold="*"</span>, <span class="code-color">uifx-delay="*"</span> и
+                <span class="code-color">uifx-repeat="true"</span> игнорируются
+              </span>
+            </code>
+
+            <h4 class="c-card__sub-title">Практика</h4>
+
+            <div class="c-card__preview">
+              <div class="c-card__preview-top">
+                <ul class="c-card__preview-tabs">
+                  <li><button
+                          id="tab-UifxFade_fade_1"
+                          aria-controls="panel-UifxFade_fade_1"
+                          aria-selected="true"
+                          class="tabButton active"
+                  >Атрибуты</button></li>
+                  <li><button
+                          id="tab-UifxFade_fade_2"
+                          aria-controls="panel-UifxFade_fade_2"
+                          aria-selected="false"
+                          class="tabButton"
+                          uifx-trigger-open="demo-uifx_fade"
+                  >Демо</button></li>
+                </ul>
+                <div class="grow"></div>
+                <button class="c-card__preview-copy c-btn c-btn__copy btnCopyCode" title="copy"></button>
+              </div>
+              <div class="c-card__preview-body active" id="panel-UifxFade_fade_1" aria-labelledby="tab-UifxFade_fade_1" role="tabpanel" tabindex="0">
+                <div class="c-card__wrap-preview-code copyCode">
+                  <code class="c-card__preview-code">
+                    class="UifxFade uifx_fade"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-delay="<span contenteditable="true">0</span>"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-speed="<span contenteditable="true">500</span>"
+                  </code>
+                  <div class="c-card__preview-group">
+                    <code class="c-card__preview-code active">
+                      uifx-affect="opacity"
+                    </code>
+                    <code class="c-card__preview-code">
+                      uifx-affect="blur-<span contenteditable="true">4</span>"
+                    </code>
+                  </div>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__preview-btn c-btn c-btn__link">Сбросить значения</button>
+              </div>
+              <div class="c-card__preview-body hiddenTagContent" id="panel-UifxFade_fade_2" aria-labelledby="tab-UifxFade_fade_2" role="tabpanel" tabindex="0">
+                <div class="c-card__preview-anim-text">
+                  <p class="UifxFade uifx_fade"
+                     uifx-threshold="0.1"
+                     uifx-delay="0"
+                     uifx-affect="opacity"
+                     uifx-speed="500"
+                     uifx-click="demo-uifx_fade"
+                  >
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  </p>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__restart-btn btnRestartAnim" title="Перезапуск" uifx-trigger="demo-uifx_fade">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px">
+                    <path fill="var(--white)" d="M24,36.1c-6.6,0-12-5.4-12-12c0-3.6,1.6-7,4.4-9.3l2.5,3.1c-1.8,1.5-2.9,3.8-2.9,6.2c0,4.4,3.6,8,8,8 s8-3.6,8-8c0-2.1-0.8-4-2.2-5.5l2.9-2.7C34.8,18,36,21,36,24.1C36,30.7,30.6,36.1,24,36.1z"/>
+                    <path fill="var(--white)" d="M12 13L21 13 21 22z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="c-card" id="uifx_fade_text-route">
+            <a href="#uifx_fade_text-route" class="c-card__wrap-title2">
+              <h3 class="c-card__title2">Позиционированное появление</h3>
+            </a>
+            <h4 class="c-card__sub-title">Теория</h4>
+            <p class="c-card__text">
+              Позиционированное появление — это анимация, которая плавно отображает элемент на странице,
+              изменяя его позицию через прозрачность или блюр. Анимация начинается, когда элемент становится видимым в
+              области просмотра пользователя. Вы можете настроить анимацию с помощью следующих атрибутов:
+            </p>
+
+            <code class="c-card__code">
+              class="UifxFade uifx_route"
+              <span>// класс</span>
+            </code>
+            <code class="c-card__code">
+              :class="uifx-up || uifx-down || uifx-right || uifx-left"
+              <span>// псевдокласс, задает направление по осям</span>
+            </code>
+            <code class="c-card__code">
+              uifx-threshold="*"
+              <span>// начнется когда * % элемента станет видимым ( по-умолчанию 0.1 - 10% )</span>
+            </code>
+            <code class="c-card__code">
+              uifx-delay="*"
+              <span>// будет воспроизведена через * миллисекунд, после uifx-threshold</span>
+            </code>
+            <code class="c-card__code">
+              uifx-speed="*"
+              <span>// скорость воспроизведения, * миллисекунд</span>
+            </code>
+            <code class="c-card__code">
+              uifx-affect="opacity || blur-*"
+              <span>// значение, появление через ПРОЗРАЧНОСТЬ или БЛЮР ( * px )</span>
+            </code>
+            <p class="c-card__text2">Дополнительные фичи:</p>
+            <code class="c-card__code">
+              uifx-repeat="true"
+              <span>// каждый раз  будет воспроизведена, при попадании в область видимости экрана</span>
+            </code>
+            <code class="c-card__code">
+              uifx-click="*"
+              <span>// начнется, когда произойдет клик по элементу с атрибутом
+                <span class="code-color">uifx-trigger-open="*"</span>, закончится когда произойдет клик по элементу с
+                атрибутом <span class="code-color">uifx-trigger-close="*"</span>. <br>Атрибуты:
+                <span class="code-color">uifx-threshold="*"</span>, <span class="code-color">uifx-delay="*"</span> и
+                <span class="code-color">uifx-repeat="true"</span> игнорируются
+              </span>
+            </code>
+            <code class="c-card__code">
+              uifx-cut="true || false"
+              <span>// задаем overflow hidden для контейнера Да или НЕТ</span>
+            </code>
+            <code class="c-card__code">
+              uifx-translate="*"
+              <span>// задаем значение css свойство translate ( по-умолчанию 200% )</span>
+            </code>
+
+            <h4 class="c-card__sub-title">Практика</h4>
+
+            <div class="c-card__preview">
+              <div class="c-card__preview-top">
+                <ul class="c-card__preview-tabs">
+                  <li><button
+                          id="tab-UifxFade_route_1"
+                          aria-controls="panel-UifxFade_route_1"
+                          aria-selected="true"
+                          class="tabButton active"
+                  >Атрибуты</button></li>
+                  <li><button
+                          id="tab-UifxFade_route_2"
+                          aria-controls="panel-UifxFade_route_2"
+                          aria-selected="false"
+                          class="tabButton"
+                          uifx-trigger-open="demo-uifx_route"
+                  >Демо</button></li>
+                </ul>
+                <div class="grow"></div>
+                <button class="c-card__preview-copy c-btn c-btn__copy btnCopyCode" title="copy"></button>
+              </div>
+              <div class="c-card__preview-body active" id="panel-UifxFade_route_1" aria-labelledby="tab-UifxFade_route_1" role="tabpanel" tabindex="0">
+                <div class="c-card__wrap-preview-code copyCode">
+                  <code class="c-card__preview-code">
+                    class="UifxFade uifx_route"
+                  </code>
+                  <div class="c-card__preview-group">
+                    <code class="c-card__preview-code active">
+                      :class="uifx-up"
+                    </code>
+                    <code class="c-card__preview-code">
+                      :class="uifx-down"
+                    </code>
+                    <code class="c-card__preview-code">
+                      :class="uifx-right"
+                    </code>
+                    <code class="c-card__preview-code">
+                      :class="uifx-left"
+                    </code>
+                  </div>
+                  <code class="c-card__preview-code">
+                    uifx-delay="<span contenteditable="true">0</span>"
+                  </code>
+                  <code class="c-card__preview-code">
+                    uifx-speed="<span contenteditable="true">500</span>"
+                  </code>
+                  <div class="c-card__preview-group">
+                    <code class="c-card__preview-code active">
+                      uifx-cut="true"
+                    </code>
+                    <code class="c-card__preview-code">
+                      uifx-cut="false"
+                    </code>
+                  </div>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__preview-btn c-btn c-btn__link">Сбросить значения</button>
+              </div>
+              <div class="c-card__preview-body hiddenTagContent" id="panel-UifxFade_route_2" aria-labelledby="tab-UifxFade_route_2" role="tabpanel" tabindex="0">
+                <div class="c-card__preview-anim-text">
+                  <p class="UifxFade uifx_route uifx-up"
+                     uifx-threshold="0.1"
+                     uifx-delay="0"
+                     uifx-affect="opacity"
+                     uifx-speed="500"
+                     uifx-click="demo-uifx_route"
+                  >
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                    ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+                  </p>
+                </div>
+                <div class="grow"></div>
+                <button class="c-card__restart-btn btnRestartAnim" title="Перезапуск" uifx-trigger="demo-uifx_route">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30px" height="30px">
+                    <path fill="var(--white)" d="M24,36.1c-6.6,0-12-5.4-12-12c0-3.6,1.6-7,4.4-9.3l2.5,3.1c-1.8,1.5-2.9,3.8-2.9,6.2c0,4.4,3.6,8,8,8 s8-3.6,8-8c0-2.1-0.8-4-2.2-5.5l2.9-2.7C34.8,18,36,21,36,24.1C36,30.7,30.6,36.1,24,36.1z"/>
+                    <path fill="var(--white)" d="M12 13L21 13 21 22z"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer></footer>
+
+<footer class="c-footer">
+<div class="c-footer__wrapper">
+  <div class="c-footer__column">
+    <p class="c-footer__text UifxFade uifx_fade"
+       uifx-speed="1300"
+    >&copy; <span id="current-year"></span> UIFX Shark. Все права защищены.</p>
+  </div>
+</div>
+</footer>
+
+</body>
+</html>

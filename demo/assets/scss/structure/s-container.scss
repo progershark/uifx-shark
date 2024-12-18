@@ -1,0 +1,9 @@
+.s-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+  padding: 24px var(--px);
+}
