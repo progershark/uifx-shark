@@ -18,5 +18,5 @@ npm install uifx-shark
 Добавьте следующие строки в ваш HTML файл:
 
 ```html
-<link rel="stylesheet" href="https://your-cdn-url/uifxshark.css">
-<script src="https://your-cdn-url/uifxshark.js"></script>
+<link rel="stylesheet" href="https://your-cdn-url/dist/uifxshark.css">
+<script src="https://your-cdn-url/dist/uifxshark.js"></script>

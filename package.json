@@ -1,6 +1,7 @@
 {
   "name": "uifx-shark",
   "version": "1.0.0",
+  "description": "Animation effects for user interface by progershark",
   "main": "dist/uifx.js",
   "repository": {
     "type": "git",
@@ -27,7 +28,6 @@
   ],
   "author": "progershark",
   "license": "MIT",
-  "description": "Animation effects for user interface by progershark",
   "devDependencies": {
     "@babel/preset-env": "^7.0.0",
     "babel-loader": "^8.0.0",
