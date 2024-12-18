@@ -1,6 +1,6 @@
 {
   "name": "uifx-shark",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Animation effects for user interface by progershark",
   "main": "dist/uifx.js",
   "repository": {
@@ -21,9 +21,17 @@
   ],
   "keywords": [
     "animation",
+    "text-animation",
     "fade",
-    "text",
+    "reveal",
+    "scroll-animation",
+    "increment",
+    "typing-effect",
     "javascript",
+    "frontend",
+    "web-animation",
+    "css",
+    "dynamic-content",
     "library"
   ],
   "author": "progershark",
