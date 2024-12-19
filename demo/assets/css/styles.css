@@ -147,11 +147,13 @@ p {
 .codeColor {
   color: var(--codeColor); }
 
-.logo__WF {
+.wrap-logo__WF {
   position: fixed;
   z-index: 999;
   right: -15px;
-  top: calc(50% - 25px);
+  top: calc(50% - 25px); }
+
+.logo__WF {
   background: var(--accent);
   font-size: 1.2em;
   text-transform: uppercase;
@@ -161,7 +163,7 @@ p {
   text-decoration: none;
   color: #fff;
   padding: 3px 15px;
-  transform: rotate(-90deg) !important;
+  transform: rotate(-90deg);
   font-weight: 600;
   border-radius: 6px 6px 0 0;
   transition: 0.2s; }
@@ -253,23 +255,19 @@ p {
     margin: 0;
     font-size: 0.8em;
     color: var(--gray-500); }
+  .c-footer__WF-wrap {
+    position: absolute;
+    right: 0; }
   .c-footer__WF {
     font-size: 0.8em;
-    position: absolute;
-    right: 0;
     text-decoration: none;
     display: flex;
     align-items: center;
-    color: var(--secondary);
-    gap: 8px; }
-  .c-footer__WF-link {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: var(--secondary);
-    text-decoration: none; }
-    .c-footer__WF-link svg {
-      width: 48px; }
+    color: var(--gray-500);
+    gap: 8px;
+    transition: 0.2s; }
+    .c-footer__WF:hover {
+      color: var(--secondary); }
 
 .c-sidebar {
   width: 320px;
