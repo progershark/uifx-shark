@@ -4,6 +4,7 @@
   padding: 10px 0;
   width: 100%;
   box-shadow: 0 -2px 4px var(--box-shadow);
+  position: relative;
 
   display: flex;
   align-content: center;
@@ -41,5 +42,28 @@
     margin: 0;
     font-size: 0.8em;
     color: var(--gray-500);
+  }
+
+  &__WF {
+    font-size: 0.8em;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--secondary);
+    gap: 8px;
+  }
+
+  &__WF-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondary);
+    text-decoration: none;
+
+    svg {
+      width: 48px;
+    }
   }
 }

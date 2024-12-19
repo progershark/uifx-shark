@@ -147,8 +147,26 @@ p {
 .codeColor {
   color: var(--codeColor); }
 
-.img-cat {
-  width: 250px; }
+.logo__WF {
+  position: fixed;
+  z-index: 999;
+  right: -15px;
+  top: calc(50% - 25px);
+  background: var(--accent);
+  font-size: 1.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #fff;
+  padding: 3px 15px;
+  transform: rotate(-90deg);
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  transition: 0.2s; }
+  .logo__WF svg {
+    width: 42px; }
 
 .c-header {
   display: flex;
@@ -203,6 +221,7 @@ p {
   padding: 10px 0;
   width: 100%;
   box-shadow: 0 -2px 4px var(--box-shadow);
+  position: relative;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -232,6 +251,23 @@ p {
     margin: 0;
     font-size: 0.8em;
     color: var(--gray-500); }
+  .c-footer__WF {
+    font-size: 0.8em;
+    position: absolute;
+    right: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--secondary);
+    gap: 8px; }
+  .c-footer__WF-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--secondary);
+    text-decoration: none; }
+    .c-footer__WF-link svg {
+      width: 48px; }
 
 .c-sidebar {
   width: 320px;

@@ -61,6 +61,28 @@ p {
   color: var(--codeColor);
 }
 
-.img-cat {
-  width: 250px;
+.logo__WF {
+  position: fixed;
+  z-index: 999;
+  right: -15px;
+  top: calc(50% - 25px);
+  background: var(--accent);
+  font-size: 1.2em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #fff;
+  padding: 3px 15px;
+  transform: rotate(-90deg);
+  font-weight: 600;
+  border-radius: 6px 6px 0 0;
+  transition: 0.2s;
+  &:hover {
+  }
+
+  svg {
+    width: 42px;
+  }
 }
