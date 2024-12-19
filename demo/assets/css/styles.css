@@ -161,10 +161,12 @@ p {
   text-decoration: none;
   color: #fff;
   padding: 3px 15px;
-  transform: rotate(-90deg);
+  transform: rotate(-90deg) !important;
   font-weight: 600;
   border-radius: 6px 6px 0 0;
   transition: 0.2s; }
+  .logo__WF:hover {
+    background: var(--accentBgHover); }
   .logo__WF svg {
     width: 42px; }
 
